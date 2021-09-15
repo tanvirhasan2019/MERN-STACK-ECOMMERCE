@@ -28,7 +28,7 @@ const SocialShare = props => {
 
   //const shareMsg = 'https://www.youtube.com/watch?v=Tuw8hxrFBH8';
 
-  console.log('FACEBOOK SHARE URL ', shareMsg);
+ 
 
   return (
     <ul className='d-flex flex-row mx-0 mb-0 justify-content-center justify-content-md-start share-box'>

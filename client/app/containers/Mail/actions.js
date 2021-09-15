@@ -14,7 +14,7 @@ import {
 
 
 export const AddProductToMail = (value) => {
-  console.log('ACTION IS CALLED', value)
+
   return {
     type: ADD_LIST_PRODUCTS,
     payload: value
@@ -23,7 +23,6 @@ export const AddProductToMail = (value) => {
 
 
 export const AddUserToMail = (value) => {
-  console.log('ACTION IS CALLED use for ', value)
   return {
     type: ADD_LIST_USERS,
     payload: value
@@ -37,14 +36,12 @@ export const AddUserToMail = (value) => {
 export const SendNewsLetter = ({products , users}) => {
 
   return async (dispatch, getState) => {
-    console.log('ACTION NEWSLETTER ', products , users);
     try {
       const data = { products : products, users:users}
       const response = await axios.post(`/api/newsletter/send/products`, data , {
         headers: { 'Content-Type': 'application/json' }
       });
 
-      console.log('ACTION NEWSLETTER RESPONSE ', response);
 
       dispatch({
         type: MAIL_LIST_RESET,

@@ -11,7 +11,6 @@ export default function Sendmail() {
 
    const handleSubmit = async() =>{
     const response = await dispatch(SendNewsLetter(emails));
-    console.log('AFTER MAIL RESPONSE IS ', response);
    }
 
   
