@@ -30,6 +30,10 @@ export const AddUserToMail = (value) => {
   };
 };
 
+
+
+
+
 export const SendNewsLetter = ({products , users}) => {
 
   return async (dispatch, getState) => {
@@ -54,7 +58,7 @@ export const SendNewsLetter = ({products , users}) => {
   };
 
 
-};
+}; 
 
 
 

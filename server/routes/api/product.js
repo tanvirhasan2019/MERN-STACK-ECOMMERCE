@@ -691,7 +691,9 @@ router.post(
 );
 
 // fetch products api
-router.get(
+
+
+ router.get(
   '/',
   auth,
   role.checkRole(role.ROLES.Admin, role.ROLES.Merchant),
@@ -734,7 +736,7 @@ router.get(
       });
     }
   }
-);
+); 
 
 // fetch product api
 router.get(

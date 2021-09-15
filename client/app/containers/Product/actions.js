@@ -71,6 +71,7 @@ export const resetProduct = () => {
 
 // fetch store products by filterProducts api
 export const filterProducts = (n, v) => {
+  console.log('advanced filters PRODUCTS ACTION');
   return async (dispatch, getState) => {
     try {
       const s = getState().product.advancedFilters;
@@ -82,6 +83,9 @@ export const filterProducts = (n, v) => {
         `/api/product/advancedFilters`,
         payload
       );
+
+      console.log('advanced filters PRODUCTS ACTION response', response);
+
       dispatch({
         type: SET_ADVANCED_FILTERS,
         payload: Object.assign(payload, {
@@ -120,7 +124,6 @@ export const fetchProducts = () => {
     }
   };
 };
-
 // fetch store products api
 export const fetchStoreProducts = () => {
   return async (dispatch, getState) => {
@@ -150,6 +153,9 @@ export const fetchStoreProducts = () => {
 
 // fetch product api
 export const fetchProduct = id => {
+
+  console.log('FTECH SINFGLE PRODUCTS');
+
   return async (dispatch, getState) => {
     try {
       const response = await axios.get(`/api/product/${id}`);
@@ -180,7 +186,7 @@ export const fetchStoreProduct = slug => {
 
     try {
       const response = await axios.get(`/api/product/item/${slug}`);
-
+      console.log('RESPONSE ', response);
       const inventory = response.data.product.quantity;
       const product = { ...response.data.product, inventory };
 

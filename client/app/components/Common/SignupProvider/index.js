@@ -15,7 +15,13 @@ const SignupProvider = () => {
   const responseGoogle = (response) => {
     
   }
+ 
+  const googlUrl = `${BASE_API_URL}/auth/google`;
+  console.log('GOOGLE URL CHECK ', googlUrl);
 
+  const FacebookYs = `${BASE_API_URL}/auth/facebook`;
+  console.log('FACEBOOK LOGIN ', FacebookYs);
+  
   return (
     <div className='signup-provider'>
      

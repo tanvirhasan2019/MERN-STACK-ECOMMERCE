@@ -9,8 +9,9 @@ export default function Sendmail() {
     const emails = useSelector(state => state.productMailReducer);
     const dispatch = useDispatch()
 
-   const handleSubmit = () =>{
-     dispatch(SendNewsLetter(emails))
+   const handleSubmit = async() =>{
+    const response = await dispatch(SendNewsLetter(emails));
+    console.log('AFTER MAIL RESPONSE IS ', response);
    }
 
   
@@ -37,15 +38,20 @@ export default function Sendmail() {
             </ul>
             </div>
            
-    
+            {   emails.send == 'SUCCESS' ?
+                <Alert severity="success">
+                <AlertTitle>Success</AlertTitle>
+                 Mail Sent to user. <strong>check it out!</strong>
+               </Alert> : null
+            }
             <div className="col-12">
                {
-                   emails.users.length <= 0 && emails.products.length <= 0 ? 
+                   emails.users.length <= 0 && emails.products.length <= 0 && emails.send != 'SUCCESS' ? 
                    <Alert severity="warning">
                      <AlertTitle>Warning</AlertTitle>
                          please select user and products
                      </Alert>  : 
-                     <Button onClick={handleSubmit} style={{width:'100%'}} variant="contained">SEND</Button>
+                     <Button onClick={handleSubmit} style={{width:'100%', marginTop:'20px'}} variant="contained">SEND</Button>
 
                }
             </div>

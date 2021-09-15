@@ -10,7 +10,8 @@ import {
 
 const initialState = {
   products : [],
-  users : []
+  users : [],
+  send : 'NULL'
 };
 
 const productMailReducer = (state = initialState, action) => {
@@ -30,7 +31,8 @@ const productMailReducer = (state = initialState, action) => {
       case MAIL_LIST_RESET:
         return {
           products : [],
-          users : []
+          users : [],
+          send : 'SUCCESS'
         }
 
 
