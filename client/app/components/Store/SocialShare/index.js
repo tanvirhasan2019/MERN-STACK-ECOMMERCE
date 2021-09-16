@@ -13,7 +13,7 @@ import {
   FacebookShareButton
 } from 'react-share';
 
-import {BASE_APP_URL} from '../../../constants';
+//import {BASE_APP_URL} from '../../../constants';
 
 const SocialShare = props => {
   const { product } = props;
@@ -24,12 +24,8 @@ const SocialShare = props => {
     window.location.protocol !== 'https' ? 'http' : 'https'
   }://${window.location.host}/product/${product.slug}`; */
 
-  const shareMsg = `${BASE_APP_URL}/product/${product.slug}`; 
-
-  //const shareMsg = 'https://www.youtube.com/watch?v=Tuw8hxrFBH8';
-
+  const shareMsg = `https://tanshen-it-solution.herokuapp.com/product/${product.slug}`; 
  
-
   return (
     <ul className='d-flex flex-row mx-0 mb-0 justify-content-center justify-content-md-start share-box'>
       <li>
