@@ -25,6 +25,7 @@ An ecommerce store built with MERN stack, and utilizes third party API's. This e
 
 ## Demo
 
+This application is deployed on Heroku. : [here](https://tanshen-it-solution.herokuapp.com/).
 
 
 ## Install
